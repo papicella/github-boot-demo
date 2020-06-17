@@ -19,4 +19,9 @@ jobs:
         java-version: 11.0.5
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: push to TAS4K8s
+      run: |
+        curl --location "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" | tar zx
+        ./cf version
+        echo "Ready to roll!!!"
 
