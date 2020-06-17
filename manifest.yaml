@@ -1,0 +1,6 @@
+---
+applications:
+  - name: github-TAS4K8s-boot-demo
+    memory: 1024M
+    instances: 1
+    path: ./target/demo-0.0.1-SNAPSHOT.jar

@@ -22,6 +22,8 @@ jobs:
     - name: push to TAS4K8s
       run: |
         curl --location "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" | tar zx
-        ./cf version
-        echo "Ready to roll!!!"
+        ./cf api https://api.tas.lab.pasapples.me --skip-ssl-validation
+        ./cf auth $CF_USERNAME $CF_PASSWORD
+        ./cf target -o apples-org -s development
+        ./cf push -f manifest.yaml
 
