@@ -11,7 +11,7 @@ import java.util.Date;
 public class FrontEnd {
     @GetMapping("/")
     public String index () {
-        log.info("An INFO Message");
+        log.info("An INFO Message for this GitHub Action Demo");
 
         return new Date().toString();
     }
